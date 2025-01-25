@@ -71,7 +71,7 @@ void app() {
 				for (int j = 0; j < 8; j++) {
 					showData[i] += magnitude[i * 8 + j];
 				}
-				showData[i] /= 128;
+				showData[i] /= 4096;//
 			}
 
 			ssd1306_Fill(0);

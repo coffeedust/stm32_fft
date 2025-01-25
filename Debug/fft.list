@@ -752,14 +752,14 @@ void app() {
  800089e:	2b07      	cmp	r3, #7
  80008a0:	ddba      	ble.n	8000818 <app+0x1bc>
 				}
-				showData[i] /= 128;
+				showData[i] /= 4096;//
  80008a2:	f507 7314 	add.w	r3, r7, #592	@ 0x250
  80008a6:	f5a3 7314 	sub.w	r3, r3, #592	@ 0x250
  80008aa:	f507 5291 	add.w	r2, r7, #4640	@ 0x1220
  80008ae:	f102 021c 	add.w	r2, r2, #28
  80008b2:	6812      	ldr	r2, [r2, #0]
  80008b4:	f853 3022 	ldr.w	r3, [r3, r2, lsl #2]
- 80008b8:	09d9      	lsrs	r1, r3, #7
+ 80008b8:	0b19      	lsrs	r1, r3, #12
  80008ba:	f507 7314 	add.w	r3, r7, #592	@ 0x250
  80008be:	f5a3 7314 	sub.w	r3, r3, #592	@ 0x250
  80008c2:	f507 5291 	add.w	r2, r7, #4640	@ 0x1220
@@ -1132,13 +1132,13 @@ static void MX_ADC1_Init(void)
  8000b68:	4b1e      	ldr	r3, [pc, #120]	@ (8000be4 <MX_ADC1_Init+0x9c>)
  8000b6a:	2200      	movs	r2, #0
  8000b6c:	609a      	str	r2, [r3, #8]
-  hadc1.Init.ScanConvMode = ENABLE;
+  hadc1.Init.ScanConvMode = DISABLE;
  8000b6e:	4b1d      	ldr	r3, [pc, #116]	@ (8000be4 <MX_ADC1_Init+0x9c>)
- 8000b70:	2201      	movs	r2, #1
+ 8000b70:	2200      	movs	r2, #0
  8000b72:	611a      	str	r2, [r3, #16]
-  hadc1.Init.ContinuousConvMode = ENABLE;
+  hadc1.Init.ContinuousConvMode = DISABLE;
  8000b74:	4b1b      	ldr	r3, [pc, #108]	@ (8000be4 <MX_ADC1_Init+0x9c>)
- 8000b76:	2201      	movs	r2, #1
+ 8000b76:	2200      	movs	r2, #0
  8000b78:	761a      	strb	r2, [r3, #24]
   hadc1.Init.DiscontinuousConvMode = DISABLE;
  8000b7a:	4b1a      	ldr	r3, [pc, #104]	@ (8000be4 <MX_ADC1_Init+0x9c>)
